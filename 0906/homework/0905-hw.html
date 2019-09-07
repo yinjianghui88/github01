@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{border: thin solid #000;}
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        document.write('<table border="1" cellspacing=0 width="600" height="600">');
+            for(var j=0;j<9;j++){
+                document.write('<tr>');
+                if(j%2==0){ //偶数行
+                    for(var i=0;i<9;i++){
+                        if(i%2==0){//偶数个单元格
+                            document.write('<td bgcolor="#000"></td>');
+                        }else{
+                            document.write('<td></td>');
+                        }
+                    }
+                }else{//奇数行
+                    for(var i=0;i<9;i++){
+                        if(i%2==1){ //奇数个单元格
+                            document.write('<td bgcolor="#000"></td>');
+                        }else{
+                            document.write('<td></td>');
+                        }
+                    }
+                }
+                document.write('</tr>');
+            }
+        document.write('</table>');
+        document.write('<hr/>');
+
+
+
+        document.write('<table cellspacing=0 width="600">');
+            for(var i=1;i<=9;i++){
+                document.write('<tr align="center">');
+                for(var j=1;j<=i;j++){
+                    document.write('<td>');
+                    document.write(j + 'x' + i + '=' + (i*j));
+                    document.write('</td>');
+                }
+                document.write('</tr>');
+            }
+        document.write('</table><hr/>');
+
+        for(var i=1;i<=9;i++){          
+            for(var j=1;j<=i;j++){
+                document.write('*');
+            }
+            document.write('<br />');
+        }
+
+        document.write('<hr />');
+
+        document.write('<div style="text-align:center; width:200px;">');
+        for(var i=1;i<=9;i++){
+            for(var j=1;j<=2*i-1;j++){
+                document.write(' * ');
+            }
+            document.write('<br />');
+        }
+        document.write('</div>');
+    </script>
+</body>
+</html>

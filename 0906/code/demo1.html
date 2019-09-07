@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // forEach
+        var arr1 = ['Allen','Bob','Chris','David','Ella','Franky','Grace'];
+        arr1.forEach(function(e){
+            console.log(e);
+        });
+        console.log('%c----------------------','color:red');
+        
+        arr1.forEach(f1);
+        function f1(e){
+            console.log(e);
+        }
+
+
+        //break 和 continue
+        for(var i=0;i<=10;i++){
+            document.write(i+'&emsp;');
+            if(i==8){
+                break; //立即退出循环
+            }
+        }
+        document.write('<hr/>');
+        
+        for(var i=0;i<=12;i++){
+            if(i % 3 == 0){
+                continue; //跳出当前循环，后面继续执行
+            }
+            document.write(i+'&emsp;');
+        }
+        document.write('<hr/>');
+
+
+        // 函数 function
+        // 定义函数
+        function fun1(){
+            document.write('你好!<br/>');
+        }
+        fun1();  //调用函数
+        fun1();
+
+        function fun2(name,age){ //形式参数
+            document.write('你好 '+name,', 你的年龄是：' + age + '<br/>');
+        }
+        fun2('老王',40);
+        fun2('老李',38);
+
+        function fun3(name,age,sex='男'){ //默认参数
+            document.write('你好 '+name,', 你的年龄是：' + age + ', 你的性别是：' + sex + '<br/>');
+        }
+        fun3('老王',40);
+        fun3('老六',20,'女');
+
+
+        //匿名函数
+        var fun4 = function (){
+            document.write('匿名函数!<br/>');
+        }
+        fun4();
+        var fun5 = function (e){
+            document.write(e+',匿名函数!<br/>');
+        }
+        fun5('测试参数');
+
+
+        function fun6(){
+            alert('点击事件测试');
+        }
+        function test1(num){
+            alert('您输入的字符为： '+num);
+        }
+
+        
+
+        window.onload = function(){ //页面加载完成后执行
+            var btn1 = document.getElementById('btn1');
+            var text1 = document.getElementById('text1');
+            btn1.onclick = function(){ //点击事件
+                var num = text1.value; //获取input元素的值
+                test1(num);
+            }
+
+
+            text1.onfocus = function(){ //获得焦点
+                this.style.border = 'thin solid #f00';
+                this.style.color = '#0ff';
+            }
+
+
+            var box1 = document.querySelector('#box1');
+            box1.onmouseenter = function(){ //鼠标移入事件
+                this.style.backgroundColor = '#f9c';
+                this.style.transition = 'all .5s';
+            }
+            box1.onmouseleave = function(){ //鼠标移出事件
+                this.style.backgroundColor = '#9fc';
+            }
+        }
+    </script>
+
+
+    <button onclick="fun6();">点我</button><br /><br/>
+    <input type="text" id="text1" placeholder="请输入" value=""/>
+    <input type="button" id="btn1" value="获取值" />
+    <br />
+
+
+    <div id="box1" style="width: 300px;height:120px;background-color:royalblue;"></div>
+
+
+</body>
+</html>

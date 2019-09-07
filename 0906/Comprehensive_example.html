@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        div{
+            text-align: center;
+            width: 1210px;
+            margin: 0 auto;
+        }
+        table{
+            margin: 0 auto;
+            border: 4px solid green;
+            padding: 5px;
+        }
+        td{
+            border: 1px solid green;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+	<script type="text/javascript">
+	function triangle(col){
+		for(var i=1;i<=col;i++){
+			for(var j=1;j<=i;j++){
+				document.write('*');
+			}
+			document.write('<br>');
+
+
+		}
+		document.write('<a href="Comprehensive_example.html">首页</a>');
+	}
+	// triangle(prompt('请输入三角形的行数：'));
+
+
+
+
+	function jiujiu(col){
+    document.write("<div>");
+    document.write("<h3>"+"九九乘法表"+"</h3>")
+    document.write('<table>');
+    for(var i =1;i<=col;i++){
+        document.write('<tr>');
+        for(var j=1;j<=i;j++){
+            document.write("<td>"+j+"*"+i+"="+i*j+"</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write('</table>');
+
+    document.write('</div>');
+    document.write('<a href="Comprehensive_example.html">首页</a>');
+}
+// jiujiu(prompt('请输入乘法表行数：'));
+ window.onload = function(){
+var tr = document.getElementById('tr');
+var chen=document.getElementById('chen');
+tr.onclick = function(){ //点击事件
+                 //获取input元素的值
+               triangle(prompt('请输入三角形的行数：'));
+               // jiujiu(prompt('请输入乘法表行数：'));
+            } 
+chen.onclick = function(){ //点击事件
+                 //获取input元素的值
+               // triangle(prompt('请输入三角形的行数：'));
+               jiujiu(prompt('请输入乘法表行数：'));
+            }             
+            }  
+
+	</script>
+	<button  id="tr" >三角形</button>
+	<button  id="chen" >九九乘法表</button>
+
+</body>
+</html>
