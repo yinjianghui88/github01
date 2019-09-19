@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 100%;
+			height: 50px;
+			background-color: orange;
+	      
+	}
+	.box i{
+		width: 50px;
+		height: 50px;
+		margin-top: 5px;
+			display: block; 
+		background: red url(./img/direction.png)no-repeat 50% 50%/30px 30px; 
+		transition: all .5s linear; 
+
+	}
+	.panner{
+		width: 100%;
+		/*height: 50px;*/
+		transition: all .5s linear;
+
+		background-color: green;
+	  		overflow: hidden;
+		/*overflow: hidden;*/
+
+		/*background-color: red;*/
+
+	}
+
+	p{
+		margin: 0;
+		padding: 0;
+	}
+	
+	</style>
+	
+
+</head>
+<body>
+		<div class="box"><i></i></div>
+		<div class="panner" style="height: 50px;"><p>content1</p></div>
+		<div class="box"><i></i></div>
+		<div class="panner" style="height: 0;"><p>content2</p></div>
+		<div class="box"><i></i></div>
+		<div class="panner" style="height: 0;"><p>content3</p></div>
+		
+      <script type="text/javascript">
+      			var boxs=document.querySelectorAll('.box');
+
+      			var panners=document.querySelectorAll('.panner');
+      			var is=document.querySelectorAll('i');
+      			// var icon=box.first
+      			console.log(boxs);
+      			console.log(panners);
+      			console.log(is);
+      			for(var i=0;i<boxs.length;i++){
+      				boxs[i].index=i;
+      				boxs[i].onclick=function(){
+
+      					 // if(this.nextElementSibling.style.height == '0px'){ //如果按钮的下一个兄弟元素的高度的为0
+            //             this.nextElementSibling.style.height = '40px'; // 将按钮下一个兄弟元素的高度改为40px
+            //             is.style.transform = 'rotate(90deg)'; // i 元素旋转90度
+            //         }else { //否则按钮下一个兄弟元素的高度改为0px
+            //             this.nextElementSibling.style.height = '0px';
+            //             is.style.transform = 'rotate(0deg)';
+            //         }
+
+
+      					for(var j=0; j<boxs.length;j++){
+      						
+      						panners[j].style.height='0px';
+      						is[j].style.transition='rotate(0deg)';
+
+
+
+
+      					}
+      					panners[this.index].style.height='50px';
+      					is[this.index].style.transform='rotate(90deg)';
+
+      					
+      						
+
+      				}
+      			}
+
+      	
+      </script>
+
+</body>
+</html>

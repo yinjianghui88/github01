@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .clock{
+            width: 400px;
+            height: 100px;
+            position: fixed;
+            right: 4px;
+            top: 4px;
+            border: 1px solid #f24448;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var start = document.querySelector('#start');
+            var box = document.querySelector('.box');
+            var btn = document.querySelector('#clear');
+
+            var t1; //定义一个全局变量， 存储定时器
+            start.onclick = function () {
+                // 循环定时器 setInterval(代码,毫秒)
+                t1 = setInterval(function () {
+                    box.innerHTML += 'hello world！ <br />';
+                },1000);
+            }
+
+            // 清除循环定时器
+            btn.onclick = function () {
+                clearInterval(t1);
+            }
+
+
+
+            function d1(){
+                var clock = document.querySelector('.clock');
+                var date = new Date();
+                //console.log(date);
+
+                // var year = date.getFullYear();
+                // var month = date.getMonth() + 1;
+
+                var d = date.toLocaleString(); //根据本地时间把 Date 对象转换为字符串
+                // clock.innerText = year + '年'+month+'月';
+                clock.innerHTML = d;
+            }
+            d1(); //先执行一次
+            setInterval(d1,1000);
+
+        }
+    </script>
+</head>
+<body>
+    <button id="start">开始</button>
+    <button id="clear">清除定时器</button>
+    <div class="box">hello world！ <br /></div>
+    <div class="clock"></div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style type="text/css">
+	.clock{
+		text-align: center;
+		line-height: 100px;
+		font-weight: bolder;
+		font-size: 30px;
+		color: green;
+	}
+</style>
+</head>
+<body>
+	<script>
+		window.onload=function(){
+
+			var box=document.querySelector('.box');
+			var start=document.querySelector('.start');
+			var clock;
+			start.onclick=function(){
+				clock=setInterval(function(){box.innerHTML+='hello world <br />';},1000);
+			}
+			console.log(box);
+	// var clock=setInterval(function(){box.innerHTML+='hello world <br />';},1000);
+	var button=document.querySelector('.button'); 
+	button.onclick=function(){
+		clearInterval(clock);
+	}
+	// clearInterval(clock);
+	// var date=new Date();
+	// var d=date.toLocalString();
+	var clock2=document.querySelector('.clock')
+
+	
+	function d1(){
+		var date=new Date();
+		var year=date.getFullYear();
+		var month=date.getMonth()+1;
+		var ri=date.getDate();
+		var day=date.getDay();
+		var hour=date.getHours();
+		var minute=date.getMinutes();
+		var second=date.getSeconds();
+		month=add(month);
+		hour=add(hour);
+		minute=add(minute);
+		second=add(second);
+		function add(i){
+			if( i<10){
+				i='0'+i;
+
+			}
+			return i;
+		}
+		switch(day){
+			case 1:
+			day='一';
+			break;
+			case 2:
+			day='二';
+			break;
+			case 3:
+			day='三';
+			break;
+			case 4:
+			day='四';
+			break;
+			case 5:
+			day='五';
+			break;
+			case 6:
+			day='六';
+			break;
+			default:
+			day='日';
+		}
+
+
+		// var d=date.toLocaleString();
+         var dateString=year+'年'+month+'月'+ri+'日'+'    '+'星期'+day+'    '+hour+':'+minute+':'+second;
+		clock2.innerHTML=dateString;
+	}
+	d1();
+	setInterval(d1,1000);
+
+}
+</script>
+<button class="start">开始按钮</button>
+<button class="button">结束按钮</button>
+<div class="box">hello world!<br /></div>
+<div class="clock" style="width: 500px;height: 100px;border: 1px solid red;"></div>
+
+
+
+</body>
+</html>
