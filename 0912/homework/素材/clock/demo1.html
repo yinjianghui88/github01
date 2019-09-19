@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+		width:27rem;
+		height: 27rem;
+		border: 1px solid red;
+		border-radius:50%; 
+		margin: 100px auto;
+		background-image: url(./images/index.png) ;
+			background-position: -6.7rem -6.3rem;
+			position: relative;
+
+	}
+	.needleh{
+		width: 27rem;
+			height: 0.35rem;
+			border: 1px solid red;
+			transform: rotate(-40deg)
+	}
+	 .needleh .needle1h{
+		width: 13.5rem;
+			height: 0.35rem;
+			border: 1px solid red;
+	}
+
+	.needlem{
+		width: 27rem;
+			height: 0.35rem;
+			border: 1px solid red;
+			transform: rotate(35deg)
+	}
+	.needlem .needle1m{
+		width: 13.5rem;
+			height: 0.35rem;
+			border: 1px solid red;
+	}
+	.needles{
+		width: 27rem;
+			height: 0.35rem;
+			border: 1px solid red;
+			transform: rotate(-80deg)
+	}
+	.needles .needle1s{
+		width: 10.5rem;
+			height: 0.35rem;
+			border: 1px solid red;
+	}
+
+	.needle1s
+	{
+		margin-left: 3rem;
+
+		background: rgba(0, 0, 0, 0.9);
+	}
+	.needle1m
+	{
+		margin-left: 3rem;
+
+		background: rgba(0, 0, 255, 0.9);
+	}
+
+
+.needleh,
+.needlem,
+.needles{
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	/*transform: rotate(-90deg)*/
+}
+
+
+</style>
+</head>
+<body>
+	<div class="box">
+	<div class="needleh">
+		<div class="needle1h"></div>
+	</div>
+		
+		<div class="needlem">
+		<div class="needle1m"></div>
+			
+		</div>
+		<div class="needles">
+		<div class="needle1s"></div>	
+			
+		</div>
+	</div>
+	<script></script>
+</body>
+</html>

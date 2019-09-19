@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>时钟</title>
+	<style type="text/css">
+		.back {
+			width: 27rem;
+			height: 27rem;
+			margin: 1rem auto;
+			border-radius: 50%;
+			background-image: url("./images/index.png");
+			background-position: -6.7rem -6.3rem;
+			position: relative;
+		}
+
+		.time_h {
+			margin-top: -0.175rem;
+			width: 12rem;
+			height: 0.35rem;
+			margin-left: -6rem;
+			/*border: 30px solid orange;*/
+
+		}
+
+		.time_m {
+			width: 16rem;
+			height: 0.25rem;
+			margin-top: -0.125rem;
+			margin-left: -8rem;
+
+			/*border: 1px solid orange;*/
+		}
+
+		.time_s {
+			width: 21.4rem;
+			height: 0.15rem;
+			margin-top: -0.075rem;
+			margin-left: -10.7rem;
+			/*border: 1px solid orange;*/
+
+		}
+
+		.time_h_h {
+			width: 6rem;
+			height: 0.35rem;
+			border: 1px solid red;
+		}
+
+		.time_m_m {
+			width: 8rem;
+			height: 0.25rem;
+			border: 1px solid red;
+		}
+
+		.time_s_s {
+			width: 10.7rem;
+			height: 0.15rem;
+			border: 1px solid red;
+
+		}
+
+		.time_h_h,
+		.time_m_m,
+		.time_s_s {
+			float: right;
+			background: rgba(0, 0, 0, 0.9);
+		}
+
+		.time_h,
+		.time_m,
+		.time_s {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: rotate(-90deg);
+		}
+	</style></head>
+	
+	<body>
+		<div class="back">
+		<!-- style="transform: rotate(270deg); -->
+			<div class="time_h" >
+				<div class="time_h_h">
+
+				</div>
+			</div>
+			<!-- style="transform: rotate(12deg);" -->
+			<div class="time_m" >
+				<div class="time_m_m">
+
+				</div>
+			</div>
+			<!-- style="transform: rotate(222deg); -->
+			<div class="time_s" >
+				<div class="time_s_s">
+
+				</div>
+			</div>
+		</div>
+	
+	<script type="text/javascript">		
+		var divH = document.getElementsByClassName("time_h")
+		var divM = document.getElementsByClassName("time_m")
+		var divS = document.getElementsByClassName("time_s")
+		setInterval(function() {
+			var newtime = new Date()
+			var h = newtime.getHours()
+			var m = newtime.getMinutes()
+			var s = newtime.getSeconds()
+			console.log(h,m,s)
+			divH[0].style.transform = "rotate(" + (-90 + h * 30) + "deg)"
+			divM[0].style.transform = "rotate(" + (-90 + m * 6) + "deg)"
+			divS[0].style.transform = "rotate(" + (-90 + s * 6) + "deg)"
+		}, 1000)
+	</script>
+
+</body></html>

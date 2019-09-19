@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.boxin{
+			background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  -webkit-background-size: 40px 40px;
+          background-size: 40px 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" style="width: 1000px;height: 30px;border: 1px solid red; border-radius:30px;">
+		<div class="boxin" style="width:100px;height: 30px; background-color: green;text-align: right; line-height: 60px;font-size: 30px; border-radius:30px; ">10%</div>
+	</div>
+	<button class="button">点我</button>
+	<script>
+		var box=document.querySelector('.box');
+		var boxin=document.querySelector('.boxin');
+		var button=document.querySelector('.button');
+		var i=100;
+		var t1;
+		button.onclick=function (){	
+			clearInterval(t1);
+			if(button==this){
+			if(i>=1000){
+				// button.disabled = false;
+				i=100;
+			}
+		}
+ // button.disabled = 'false';
+			t1=setInterval(width,500);
+			}
+	function width(){
+			
+		boxin.style.width=i+'px';
+		boxin.innerHTML=i/10+'%';
+		if(i>=1000){
+			// button.disabled = 'false';
+
+			clearInterval(t1);
+			i=100;}
+			// i=100;
+			// window.location.reload();
+		// }else if(i<1000){
+		// 	button.disabled = 'true';
+		// }
+
+		i+=100;	
+			
+}
+
+
+	box.onmouseover=function(){
+				
+		clearInterval(t1);
+	}
+	box.onmouseleave=function(){
+		if(i>=1000){
+				i=100;
+			}
+		t1=setInterval(width,500);
+	}
+
+
+
+			
+	
+
+	</script>
+</body>
+</html>

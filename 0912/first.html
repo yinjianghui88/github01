@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box">
+		<img src="./images/01.jpg" alt="" width="600" height="370" class="img1">
+	</div>	
+	<script>
+		var img=document.querySelector('.img1');
+		var i=1;
+		var t1;
+		function qiehuan(){
+			i++;
+			if(i>5){
+				i=1;
+			}
+			img1.src='./images/0'+i+'.jpg';
+
+
+		}
+
+		t1=setInterval(qiehuan,200);
+	</script>	
+</body>
+</html>
