@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css
+">
+	<style type="text/css">
+	.box{
+		width: 600px;
+		height: 600px;
+		border: 1px solid red;
+		margin:0 auto;
+
+
+	}
+	.box .nav{
+
+		width: 500px;
+		height: 80px;
+		border: 1px solid red;
+		text-align: center;
+		margin: 30px auto;
+		position: relative;
+	}
+
+	.nav button{
+		width: 60px;
+		height: 50px;
+		margin-left:20px;
+
+	}
+	.nav button:nth-child(1){
+		margin-left: 0px;
+	}
+	.nav i{
+
+		/*display: block;
+		width: 30px;
+		height: 30px;*/
+		/*padding: 0;
+		margin: 0;*/
+	   /*border: thin blue solid;*/
+	   /*overflow: hidden;*/
+       
+		/*background:  url(./images/triangle.png)no-repeat 100% 0px/30px 30px;*/
+		/*margin: 0 auto;*/
+	position: absolute;
+	top: 98%;
+	left: 34%;
+
+
+
+		
+
+		border-left:10px solid transparent;
+		border-right:10px solid transparent;
+		border-top: 10px solid red; 
+		display: none;
+		/*position: absolute;
+		top:50%;
+		margin-top: 8px;
+		transform: translateX(-45px);
+		background:*/ 
+
+	
+	}
+	.nav ul{
+		list-style: none;
+		margin:0;
+		padding: 0;
+
+	}
+	.nav ul {
+		display: flex;
+		justify-content: space-between;
+	} 
+	.nav li{
+		position: relative;
+	}
+
+
+
+	.box2{
+		width: 600px;
+
+		
+
+	}
+
+	.box2 .list{
+		margin-top: 50px;
+		width: 600px;
+		height: 400px;
+		display: none;
+		position: relative;
+
+	}
+	.box2 .list:nth-child(1){
+		display: block;
+	}
+	.box2 .list:nth-child(2){
+		/*display: block;*/
+	}
+	.box2 .list:nth-child(3){
+		/*display: block;*/
+	}
+	.box2 .list:nth-child(4){
+		/*display: block;*/
+	}
+	.box2 .list:nth-child(5){
+		/*display: block;*/
+	}
+	.box2 .list:nth-child(6){
+		/*display: block;*/
+	}
+	p{
+		width: 600px;
+		height: 60px;
+		border-radius:30px; 
+		background:rgba(0,0,0,.3);
+		position: absolute;
+		bottom: 5px;
+		color: #fff;  
+		text-align: center;
+		line-height: 60px;
+
+	}
+
+	.box .nav .active{
+		background-color: red;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="nav">
+			<!-- <input type="button" value="资讯" >
+<input type="button" value="环球" >
+			<input type="button" value="汽车" >
+			<input type="button" value="娱乐" >
+			<input type="button" value="奢品" >
+			<input type="button" value="历史" > -->
+
+			<!-- <button>资讯</button>
+			<sub class="cor"><i class="fa fa-address-book" aria-hidden="true"></i> </sub>
+			<button>环球</button>
+			<sub class="cor"><i class="fa fa-address-book" aria-hidden="true"></i> </sub>
+			<button>汽车</button>
+			<sub class="cor"><i class="fa fa-address-book" aria-hidden="true"></i> </sub>
+			<button>娱乐</button>
+			<sub class="cor"><i class="fa fa-address-book" aria-hidden="true"></i> </sub>
+			<button>奢品</button>
+			<sub class="cor"> <i class="fa fa-address-book" aria-hidden="true"></i>  </sub>
+			<button>历史</button>
+			<sub class="cor"><i class="fa fa-address-book" aria-hidden="true"></i> </sub> -->
+			<ul>
+				<li>
+					<button>资讯</button>
+					<i></i>
+				</li>
+				<li>
+					<button>环球</button>
+					<i></i>
+				</li>
+				<li>
+					<button>汽车</button>
+					<i></i>
+				</li>
+				<li>
+					<button>娱乐</button>
+					<i></i>
+				</li>
+				<li>
+					<button>奢品</button>
+					<i></i>
+				</li>
+				<li>
+					<button>历史</button>
+					<i></i>
+				</li>
+			</ul>
+		</div>
+		
+	
+	<div class="box2">
+		<div class="list">
+			<img src="./images/timg.jpg"  style="width: 600px; height: 400px;" alt="">
+			<p>	向前！向前！向前！！！</p>
+		</div>
+		<div class="list">
+			<img src="./images/timg2.jpg" style="width: 600px; height: 400px;" alt="">
+			<p>	向前！向前！向前！！！</p>
+		</div>
+		<div class="list">
+			<img src="./images/timg3.jpg" style="width: 600px; height: 400px;" alt="">
+			<p>	向前！向前！向前！！！</p>
+		</div>
+		<div class="list">
+			<img src="./images/timg4.jpg" style="width: 600px; height: 400px;" alt="">
+			<p>	向前！向前！向前！！！</p>
+		</div>
+		<div class="list">
+			<img src="./images/timg1.jpg" style="width: 600px; height: 400px;" alt="">
+			<p>	向前！向前！向前！！！</p>
+		</div>
+		<div class="list">
+			<img src="./images/timg6.jpg"  style="width: 600px; height: 400px;"alt="">
+			<p>	向前！向前！向前！！！</p>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript">
+		var navs=document.querySelector('.nav');
+		buttons=navs.querySelectorAll('button');
+		console.log(buttons);
+		var box2=document.querySelectorAll('.list');
+		var is=document.querySelectorAll('i');
+		console.log(is);
+		
+			for(var i=0;i<buttons.length;i++){
+				buttons[i].index=i;
+				buttons[i].onclick=function(){
+
+				for(var j=0;j<buttons.length;j++){
+						buttons[j].setAttribute('class','')
+						box2[j].style.display = 'none';
+						is[j].style.display='none';
+
+				}
+				buttons[this.index].setAttribute('class','active');
+				// this.style.backgroundColor='blue';
+				box2[this.index].style.display = 'block';
+				is[this.index].style.display='block';
+
+			}
+
+		}
+	
+	</script>
+</body>
+</html>

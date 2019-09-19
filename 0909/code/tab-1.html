@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css" rel="stylesheet">
+        .tab{
+            width: 400px;
+            border: 1px solid #f0ad4e;
+        }
+        .tab .btns input[type="button"]{
+            width: 100px;
+            height: 30px;
+            border: thin solid #ccc;    
+        }
+        .tab .content {
+            width: 400px;
+            height: 200px;
+            overflow: hidden;
+            display: none;
+        }
+        .tab .content:nth-child(1){
+            background-color: #2C8DFB;
+            display: block;
+        }
+        .tab .content:nth-child(2){
+            background-color: #00ffff;
+        }
+        .tab .content:nth-child(3){
+            background-color: #7254e4;
+        }
+        .active{
+            background-color: #f24448;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="btns">
+            <input class="active" type="button" value="选项1" />
+            <input type="button" value="选项2" />
+            <input type="button" value="选项3" />
+        </div>
+        <div class="box">
+            <div class="content"><h1>content1</h1></div>
+            <div class="content"><h1>content2</h1></div>
+            <div class="content"><h1>content3</h1></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // 获取按钮
+        var btns = document.querySelector('.btns');
+          btns_arr = btns.querySelectorAll('input');
+        // 获取内容div
+        var boxes = document.getElementsByClassName('content');
+        console.log(boxes);
+
+        for(var i=0;i<btns_arr.length;i++){
+            btns_arr[i].index = i; //给按钮添加索引
+            //点击事件
+            btns_arr[i].onclick = function () {
+                for(var j=0;j<btns_arr.length;j++){
+                    // 先清除所有按钮的激活状态
+                    btns_arr[j].setAttribute('class','');
+                    // 隐藏所有的div元素
+                    boxes[j].style.display = 'none';
+                }
+                // 给点击的按钮添加激活状态
+                this.setAttribute('class','active');
+                //alert(this.index);
+                // 显示与按钮索引对应的div元素
+                boxes[this.index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

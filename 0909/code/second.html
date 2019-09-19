@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" rel="stylesheet" >
+		.box{
+			width:400px;
+			border: 1px solid red;
+			
+
+		}
+		.box .button{
+			display: flex;
+			justify-content: space-between;
+			
+			width: 100px;
+		}
+		.box .button>input{
+			background-color: blue;
+			width: 100px;
+		}
+		.box2 {
+			width: 400px;
+			height: 300px;
+			border: 1px solid red;
+			box-sizing:border-box;
+		}
+		.box2 .list{
+			width: 400px;
+			height: 100px;
+			background-color: green;
+			font-size: 40px;
+			font-weight: bolder;
+			line-height: 100px;
+			text-align: center;
+			display: none;
+
+
+		}
+		.box2 .list:nth-child(1){
+			background-color: orange;
+			display: block;
+
+		}
+		.box2 .list:nth-child(2){
+			background-color: skyblue;
+			
+		}
+		.box2 .list:nth-child(3){
+			background-color: #999;
+			
+		}
+		.box .button .active{
+			background-color: red;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="button"><input type="button"  value="选项1">
+			<input type="button" value="选项1">
+			<input type="button" value="选项1">
+		</div>
+	</div>
+	<div class="box2">
+		<div class="list">list1</div>
+		<div class="list">list2</div>
+		<div class="list">list3</div>
+
+	</div>
+	<script type="text/javascript">
+		var input=document.querySelector('.button');
+		var inputs=input.querySelectorAll('input');
+ var box2 = document.querySelectorAll('.list');
+		console.log(inputs);
+		for(var i=0;i<inputs.length;i++){
+			inputs[i].index=i;
+			inputs[i].onclick=function (){
+				for(var j=0; j<inputs.length;j++){
+					inputs[j].setAttribute('class','')
+					 box2[j].style.display = 'none';
+				}
+			
+			// this.style.backgroundColor='red';
+			inputs[this.index].setAttribute('class','active');
+			box2[this.index].style.display = 'block';
+		}
+}
+	</script>
+
+</body>
+</html>

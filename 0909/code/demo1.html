@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //页面加载之后执行
+        window.onload = function () {
+            //通过 id 查找
+            var a1 = document.getElementById('a1');
+            console.log(a1);
+            console.log(a1.childElementCount);
+            console.log(a1.attributes.href);
+            console.log(a1.innerHTML);//获取内容
+            console.log(a1.innerText); //获取文本
+            console.log(a1.name); //name值
+            console.log(a1.nextSibling); //返回某个元素之后紧跟的节点
+            a1.style.fontSize = '20px';
+            a1.style.color = '#f00';
+
+            console.log('%c --------------------------------------','color:red;');
+            // 通过标签名查找 HTML 元素
+            var paras = document.getElementsByTagName('h1');
+            console.log(paras); //数组形式
+            console.log(paras.length);
+            console.log(paras[0]);
+            for (var i = 0;i < paras.length; i++){
+                paras[i].style.color = '#0f0';
+            }
+
+            console.log('%c --------------------------------------','color:red;');
+            // 通过类名找到 HTML 元素
+            var tit_1 = document.getElementsByClassName('title1');
+            console.log(tit_1); //数组类型
+
+            console.log('%c --------------------------------------','color:red;');
+            // 通过name属性获取元素
+            var tit_2 = document.getElementsByName('title2');
+            console.log(tit_2); //数组
+            console.log(tit_2.length);//3
+
+            console.log('%c --------------------------------------','color:red;');
+            // querySelector() 方法仅仅返回匹配指定选择器的第一个元素
+            // 如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代
+            var tit_3 = document.querySelector('#tit-3');
+            console.log(tit_3); //<h4 id="tit-3">querySelector测试</h4>
+            var tit_4 = document.querySelector('.tit-4');
+            console.log(tit_4); //<h4 class="tit-4">querySelector测试 class</h4>
+
+            console.log('%c --------------------------------------','color:red;');
+            //querySelectorAll()
+            var tit_5 = document.querySelectorAll('.tit-5');
+            console.log(tit_5); // 数组
+
+        }
+    </script>
+</head>
+<body>
+    <!--通过 id 查找 HTML 元素-->
+    <a href="http://www.baidu.com" id="a1" name="baidu">id获取元素 <span>1</span></a><p class="ereres">adsfjdjfkjsd</p><br />
+    <h1>content1</h1>
+    <h1>content2</h1>
+    <h1>content3</h1>
+    <h1>content4</h1>
+    <!--通过class查找元素-->
+    <h2 class="title1">content1</h2>
+    <h2 class="title1">content2</h2>
+    <h2 class="title1">content3</h2>
+    <h3 name="title2">document.getElementsByName 方法测试</h3>
+    <h3 name="title2">document.getElementsByName 方法测试</h3>
+    <h3 name="title2">document.getElementsByName 方法测试</h3>
+    <h4 id="tit-3">querySelector测试 id</h4>
+    <h4 class="tit-4">querySelector测试 class</h4>
+
+    <h5 class="tit-5">querySelectorAll 方法测试</h5>
+    <h5 class="tit-5">querySelectorAll 方法测试</h5>
+    <h5 class="tit-5">querySelectorAll 方法测试</h5>
+</body>
+</html>

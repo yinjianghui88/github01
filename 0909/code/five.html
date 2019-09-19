@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+
+		.contain{
+			width: 100%;
+			height: 30px;
+			background-color: blue;
+		}
+		.contain i{
+			transition: all .6s linear;
+			width: 30px;
+			height: 30px;
+			/*background-color: red;*/
+			margin-top: 5px;
+			display: block; 
+			background: red url(./images/direction.png) no-repeat 50% 50%/30px 30px;
+		}
+	/*.contain>i>img{
+	  	width: 100%;
+	  	height: 100%;*/
+	  	/*background-color: red;*/
+	  	/*display: block; */
+	  	/*background-image: #ccc url(./images/direction.png) no-repeat 4px 50% 30px ;*/
+	  	/*}*/
+	  	.panel{
+	  		width: 100%;
+	  		background-color: green;
+	  		overflow: hidden;
+	  		transition: all .6s linear;
+
+	  	}
+	  	p{
+	  		margin: 0;
+	  		padding: 0;
+
+	  	}
+	  	.panel .active{
+	  		background-color: red;
+	  	}
+	  </style>
+
+	</head>
+	<body>
+		<div class="contain"><i id="zhuang"></i></div>
+		<div class="panel" style="height: 0px">
+			<p>content1</p>
+		</div>
+
+
+		<div class="contain"><i id="zhuang"></i></div>
+		<div class="panel" style="height: 0px">
+			<p>content1</p>
+		</div>
+
+
+		<div class="contain"><i id="zhuang"></i></div>
+		<div class="panel" style="height: 0px">
+			<p>content1</p>
+		</div>
+		<script type="text/javascript">
+		 window.onload = function () {
+				var contains=document.querySelectorAll('.contain');
+				var panels=document.querySelectorAll('.panel');
+				var zhuangs=document.querySelectorAll('#zhuang')
+				console.log(contains);
+				console.log(panels);
+				console.log(zhuangs);
+				for(var i=0;i<contains.length;i++){
+					contains[i].index=i;
+
+		contains[i].onclick=function(){
+
+		for(var j=0;j<contains.length;j++){
+
+             contains[j].setAttribute('class','')
+
+                     // box2[j].style.display = 'none';
+                     panels[j].style.display = 'none';
+                     zhuangs[j].style.transform='rotate(0deg)';
+                 }
+
+                 this.setAttribute('class','active');
+
+
+                 panels[this.index].style.display='block';
+                 zhuangs[this.index].style.transform='rotate(90deg)';
+             }
+
+
+
+
+
+
+
+
+				// 		var icon = this.firstElementChild; //第一个元素子节点
+    //                 console.log( icon);
+				// 		if(this.nextElementSibling.style.height == '0px'){
+				// 	// if(this.nextElementsibling.style.height=){
+				// 		this.nextElementSibling.style.height = '40px'; 
+				// 	// }
+				// 	icon.style.transform = 'rotate(90deg)';
+
+
+				// }else
+				//  { 
+				// 	this.nextElementSibling.style.height = '0px';
+				// 	icon.style.transform = 'rotate(0deg)';
+
+				// }
+	}
+	
+}
+
+
+</script>
+
+	</body>	
+	
+</html>	

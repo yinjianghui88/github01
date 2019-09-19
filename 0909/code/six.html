@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .accordion{
+            width: 100%;
+            height: 40px;
+            border: thin solid #eee;
+            background-color: #ccc;
+        }
+        .accordion i{
+            display: block;
+            width: 30px;
+            height: 30px;
+            margin-top: 5px;
+            background: url("./images/direction.png") no-repeat 50% 50%/20px 20px;
+            /*transition: all .4s linear;*/
+            background-color: red;
+        }
+        .panel{
+            width: 100%;
+            background-color: #cfc;
+            overflow: hidden;
+            /*transition: all .4s linear;*/
+        }
+        p{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var btns = document.querySelectorAll('.accordion'); //获取所有按钮
+            //console.log(btns);
+            for(var i = 0 ;i < btns.length; i++){ //遍历按钮
+                btns[i].onclick = function () { //每个按钮的点击事件
+                    var icon = this.firstElementChild; //第一个元素子节点
+                    console.log( icon); // i
+                    if(this.nextElementSibling.style.height == '0px'){ //如果按钮的下一个兄弟元素的高度的为0
+                        this.nextElementSibling.style.height = '40px'; // 将按钮下一个兄弟元素的高度改为40px
+                        icon.style.transform = 'rotate(90deg)'; // i 元素旋转90度
+                    }else { //否则按钮下一个兄弟元素的高度改为0px
+                        this.nextElementSibling.style.height = '0px';
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                    // console.log(this.nextElementSibling.style.height);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="accordion"><i></i></div>
+    <div class="panel" style="height: 0px;">
+        <p>Content information 1</p>
+    </div>
+
+    <div class="accordion"><i></i></div>
+    <div class="panel" style="height: 0px;">
+        <p>Content information 2</p>
+    </div>
+
+    <div class="accordion"><i></i></div>
+    <div class="panel" style="height: 0px;">
+        <p>Content information 3</p>
+    </div>
+</body>
+</html>

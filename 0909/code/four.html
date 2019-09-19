@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css
+">
+    <style type="text/css">
+    button{
+    	width: 100%;
+    	height: 50px;
+    	/*background-color: #aaa;*/
+		text-align: left;
+		font-size: 20px;
+		font-weight: bolder;
+        background-image: #ccc url() no-repeat 4px 50%/30px;
+    }
+    .panel{
+        width: 100%;
+        /*height: 40px;*/
+        background-color: blue;
+        overflow: hidden;
+        /*display: none;*/
+        /*transform: */
+    }
+    p{
+    	/*transform: translateY(-40px);*/
+       margin:0;
+       padding: 0; 
+
+    }
+    .zhuang .active{
+    	/*transform: rotate(90deg);*/
+    	background-color: blue;
+    	
+    }
+    /*.mouseenter*/
+
+
+    </style>
+</head>
+<body>
+    <div class="accordion"><i class="fa fa-chevron-right
+" ></i></div>
+    <div class="panel" style="height: 0px">
+        <p>Content information 1</p>
+    </div>
+
+    <div class="accordion" ><i class="fa fa-chevron-right
+" ></i></div>
+    <div class="panel">
+        <p>Content information 2</p>
+    </div>
+
+    <div class="accordion" ><i class="fa fa-chevron-right
+" ></i></div>
+    <div class="panel">
+        <p>Content information 3</p>
+    </div>
+    <script type="text/javascript">
+    	var buttons=document.getElementsByTagName('button');
+    	// var ps=buttons.nextElementSibling;
+    	var icons=document.getElementsByClassName('fa');
+    	// var ps=document.getElementsByTagName('button').nextElementSibling();
+    	var ps=document.getElementsByTagName('p');
+    	console.log(ps);
+    	
+    	console.log(buttons);
+
+    	for(var i=0;i<buttons.length;i++){
+    		// buttons[i].index=i;
+    		buttons[i].onclick=function(){
+               console.log(icons); 
+            for(var j=0;j<buttons.length;j++){
+
+                     buttons[j].setAttribute('class','')
+
+                     // box2[j].style.display = 'none';
+                     ps[j].style.display = 'none';
+                     zhuangs[j].style.transform='rotate(0deg)';
+                }
+
+                this.setAttribute('class','active');
+
+
+                ps[this.index].style.display='block';
+                zhuangs[this.index].style.transform='rotate(90deg)';
+         }
+         
+            
+
+            
+    // 			for(var j=0;j<buttons.length;j++){
+
+				// 		buttons[j].setAttribute('class','')
+
+				// 		// box2[j].style.display = 'none';
+				// 		ps[j].style.display = 'none';
+				// 		zhuangs[j].style.transform='rotate(0deg)';
+				// }
+
+				// this.setAttribute('class','active');
+
+
+				// ps[this.index].style.display='block';
+				// zhuangs[this.index].style.transform='rotate(90deg)';
+    // 		}
+    // 		}
+    		
+
+    </script>
+
+</body>
+</html>
