@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload=init;
+		function init(){
+			var w1;
+			var opens=document.querySelector('#open');
+			opens.onclick=function(){
+				this.disabled='false';
+				w1=window.open('http://www.runoob.com','_blank','left=300,width=100,height=100');
+			}
+
+			var close=document.querySelector('#close');
+			var i = 3;
+			close.onclick=function(){
+
+
+				setTimeout(function(){
+					w1.close();
+					window.location.reload();
+				},3000);
+
+              
+
+				t1=setInterval(function(){
+					i--;
+					// alert(i);
+					close.innerHTML = i +'秒关闭窗口。';
+					if(i<=0){
+						clearInterval(t1);
+						i=3;
+						close.innerHTML= i+'秒关闭窗口。';
+					}
+				},1000);
+
+
+
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<button id="open">打开新窗口 </button>
+	<button id="close">3关闭新窗口</button>
+</body>
+</html>

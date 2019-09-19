@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.end:hover{
+			background-color: green;
+		}
+		.start:hover{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img  id="img1" src="./images/timg1.jpg"  style="width: 600px;height: 370px;margin-left: 100px;" alt="">
+	</div>
+	<button class="start" style="width: 100px;height: 50px;margin-left:100px; ">开始</button>
+	<button class="end" style="width: 100px;height: 50px; margin-left: 400px;">结束</button>
+	<script type="text/javascript">
+		var boximg=document.querySelector('#img1');
+		var start=document.querySelector('.start');
+		var stop=document.querySelector('.end');
+		console.log(start);
+		console.log(boximg);
+		var t1;
+		var i=1;
+		// t1=setInterval(qiehuan,1000);
+		function qiehuan(){
+			i++;
+			if(i>7){
+				i=1;
+			}
+			// alert(i);
+			boximg.src='./images/timg'+i+'.jpg';
+		}
+	// boximg.onmouseover = function () {
+	// 		clearInterval(t1);
+	// 	}
+	// 	boximg.onmouseout = function () {
+	// 		t1 = setInterval(qiehuan,1000);
+	// 	}
+		start.onclick=function(){
+			t1 = setInterval(qiehuan,1000);
+			this.disabled = 'false';
+		}
+		stop.onclick=function(){
+			// this.disabled = 'true';
+			clearInterval(t1);
+			// this.disabled = 'true';
+			window.location.reload();
+		}
+		
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .box{
+            width: 600px;
+            height: 370px;
+            /*border: 1px solid #f24448;*/
+            position: relative;
+        }
+        /*.box img{margin: 0;}*/
+        ul{margin: 0px;padding: 0px;list-style-type: none;}
+        .btn-box{
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            position: absolute;
+            right: 20px;
+            bottom: 4px;
+        }
+        .btn-box .btn{
+            width: 25px;
+            height: 25px;
+            border: thin solid #ccc;
+            text-align: center;
+            line-height: 25px;
+            color: black;
+            font-weight: bold;
+            background-color: rgba(255,255,255,.5);
+            cursor: pointer;
+        }
+        
+    </style>
+    <title>Title</title>
+</head>
+<body>
+    <div class="box">
+        <img id="img1" src="./images/timg1.jpg" width="600" height="370" alt="">
+        <ul class="btn-box">
+            <li class="btn">1</li>
+            <li class="btn">2</li>
+            <li class="btn">3</li>
+            <li class="btn">4</li>
+            <li class="btn">5</li>
+            <li class="btn">6</li>
+            <li class="btn">7</li>
+
+        </ul>
+    </div>
+
+
+    <script src="./js/demo3.js"></script>
+    <!--
+        1. 循环定时器切换图片
+        2. 鼠标移入，暂停定时器
+        3. 鼠标移出，继续切换图片
+    -->
+</body>
+</html>

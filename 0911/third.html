@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style type="text/css">
+		.box{
+			position: relative;
+			/*border: 1px solid red;*/
+		}
+		img{padding: 0;margin: 0;
+		}
+		.boxindex{
+			width: 230px;
+			height: 50px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			/*border: 1px solid red;*/
+			display: flex;
+			justify-content: space-between;
+			position: absolute;
+			left:450px;
+			bottom: 6px;
+			cursor: pointer;
+		}
+		.boxindex .index{
+			width: 30px;
+			height: 50px;
+			font-size: 18px;
+			font-weight: bold;
+			/*border: 1px solid red;*/
+			text-align: center;
+			line-height: 50px;
+			color: #000;
+			background-color: rgba(255,255,255,.6); 
+
+
+
+		}
+		/*.index:hover{
+			background-color: red;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img id="img1" src="./images/timg1.jpg" style="width: 600px;height: 400px;margin-left: 100px ;"  alt="">
+		<ul class="boxindex">
+			<li class="index">1</li>
+			<li class="index">2</li>
+			<li class="index">3</li>
+			<li class="index">4</li>
+			<li class="index">5</li>
+			<li class="index">6</li>
+			<li class="index">7</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="js/third.js"></script>
+</body>
+</html>

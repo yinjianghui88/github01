@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //页面加载完成后，执行js代码
+        window.onload = init;
+        function init() {
+            var new_window = document.getElementById('open');
+            var w1;
+            new_window.onclick = function () { //点击按钮打开新窗口
+                w1 = window.open('http://www.baidu.com', '_blank', "left=510,top=200,width=600,height=400");
+                this.disabled = 'false'; //打开新窗口，禁用按钮
+            }
+            var close = document.getElementById('close');
+            var i = 3;
+            close.onclick = function () { //点击按钮关闭新窗口
+                t1 = setInterval(function () {
+                    i--;
+                    close.innerText = i+'秒关闭窗口';
+                    if(i<0){
+                        clearInterval(t1);
+                        i=3;
+                        close.innerText = i+'秒关闭窗口';
+                    }
+                },1000);
+                setTimeout(function () {
+                    w1.close();
+                    window.location.reload();//关闭新窗口后，刷新页面
+                },3000)
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="open">打开新窗口</button>
+    <button id="close">3秒关闭窗口</button>
+</body>
+</html>

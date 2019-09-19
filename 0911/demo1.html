@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style type="text/css">
+        #open{
+            width: 200px;
+            height: 100px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #close{
+            width: 200px;
+            height: 100px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+	<button id="open">打开新窗口</button>
+	<button id="close">4秒关闭窗口</button>
+	<script type="text/javascript">
+			 window.onload = init;
+                 var i = 4;
+        function init() {
+            var open = document.getElementById('open');
+            var w1;
+            open.onclick = function () { //点击按钮打开新窗口
+                w1 = window.open('http://www.runoob.com', '_blank', "left=510,top=200,width=600,height=400");
+                this.disabled = 'false';
+                t1 = setInterval(function () {
+                    i--;
+                    close.innerText = i+'秒关闭窗口';
+                    if(i<-1){
+                        clearInterval(t1);
+                        i=4;
+                        close.innerText = i+'秒关闭窗口';
+                    }
+                },1000);
+
+                setTimeout(function () {
+                    w1.close();
+                    window.location.reload();//关闭新窗口后，刷新页面
+                },5000)
+                 //打开新窗口，禁用按钮
+
+            }
+            var close = document.getElementById('close');
+        
+            // close.onclick = function () { //点击按钮关闭新窗口
+                // t1 = setInterval(function () {
+                //     i--;
+                //     close.innerText = i+'秒关闭窗口';
+                //     if(i<0){
+                //         clearInterval(t1);
+                //         i=4;
+                //         close.innerText = i+'秒关闭窗口';
+                //     }
+                // },1000);t1 = setInterval(function () {
+                    
+               
+            // }
+        }
+	</script>
+</body>
+</html>
